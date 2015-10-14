@@ -1,0 +1,455 @@
+
+
+
+/***************************** Add-ons Manager ********************************/
+#addons-page {
+  -moz-appearance: none!important;
+  background: -moz-linear-gradient(rgb(110,110,110), rgb(110,110,110)) !important;
+  color: WindowText!important;
+  border-style: solid !important;
+  border-width: 1px 0 0px 0 !important;
+  border-color: rgb(163,163,163) !important;
+}
+ 
+#view-port-container {
+  /* Needed to allow the radius to clip the inner content, see bug 595656 */
+  -moz-appearance: none !important;
+  overflow: hidden!important;
+  background: #1a1a1a !important;
+  width:500px !important;
+  height:500px !important;
+  color: #ababab !important;
+  border: 0 solid !important;
+  border-radius: 0px !important;
+  border-left: 0px solid !important;
+  -moz-border-left-colors:    rgba(255, 255, 255, 0.04)  rgba(0, 0, 0, 0.32)!important;
+}
+
+#categories {
+  background: #393939 !important;
+  border: 1px solid #353535 !important;
+  margin: 0 -1px -1px 0 !important;
+}
+
+.category,
+#categories richlistitem {
+  -moz-appearance: none !important;
+  background: transparent !important;
+  padding: 10px 4px  !important;
+  -moz-box-align: center  !important;
+  overflow: hidden  !important;
+  border-radius: 0px !important;
+  border: 1px solid transparent !important;
+  }
+
+.category[selected],
+#categories richlistitem[selected="true"] {
+  background: rgba(1,98,149,0.65) !important;
+  border: 0px solid #525252!important;
+  border-right: none !important;
+  color: #f2f2f2 !important;
+}
+
+#categories richlistitem{
+  color: #ababab !important;
+}
+
+#categories richlistitem:hover{
+  color: #cdcdcd !important;
+}
+
+#categories richlistitem[selected="true"]:hover {
+	background: #565656 !important;
+  color: #f2f2f2 !important;
+}
+
+/*this makes the selected addon to installs main page legable within dark theme*/
+#discover-browser {
+  background: rgb(190,190,190) !important;
+  text-shadow: none !important;
+}
+
+#header-search {
+	-moz-appearance: none !important;
+	border-radius: 3px !important;
+    border-top: 1px solid #ff0000 !important;
+  border-left: 1px solid #474747 !important;
+  border-right: 1px solid #474747 !important;
+  border-bottom: 1px solid #474747 !important;
+  background:  #ababab !important;
+	box-shadow: 0 1px rgba(255,255,255,0.14),
+				0 1px rgba(0,0,0,0.16) inset,
+				1px 0 rgba(0,0,0,0.16) inset,
+				-1px 0 rgba(0,0,0,0.08) inset,
+				0 2px rgba(0,0,0,0.12) inset,
+				2px 0 rgba(0,0,0,0.08) inset,
+				-2px 0 rgba(0,0,0,0.06) inset,
+				0 3px rgba(0,0,0,0.08) inset,
+				3px 0 rgba(0,0,0,0.04) inset,
+				-3px 0 rgba(0,0,0,0.04) inset !important;			
+	  padding: 3px !important;
+  margin: 0px !important;
+  margin-bottom: 1px !important;			
+}
+
+#header-search input {
+    -moz-appearance: none !important;
+    background:  #ababab !important;
+    color: #1b2124 !important;
+}
+
+#header-search textarea {
+    -moz-appearance: none !important;
+    background:  #ababab !important;
+    color: #1b2124 !important;
+}
+
+.view-header {
+  background: -moz-linear-gradient(rgba(255,255,255,0.0), rgba(255,255,255,0.09)), -moz-linear-gradient(rgb(57,57,57), rgb(52,52,52)) !important;
+  border-top: 0px solid rgba(9,9,9,0.55) !important;
+  border-bottom: 1px solid rgb(49,49,49) !important;
+  padding: 4px !important;
+  margin: 0 !important;
+  min-height: 31px !important;
+}
+
+#search-filter {
+  padding: 5px 20px !important;
+  font-size: 120% !important;
+  background: #393939 !important;
+  overflow-x: hidden !important;
+}
+
+.addon {
+  color: #4d4d45 !important;
+  border:  0 solid !important;
+  border-bottom: 1px solid #222222 !important;
+  box-shadow: none!important;
+}
+
+.addon:first-of-type {
+  border-top: none !important;
+}
+
+.addon:hover,
+.addon[active="false"]:hover {
+  background: #161616!important;
+}
+
+.addon[selected] {
+  background: #121212!important;
+  color: #8d8d8d !important;
+  -moz-transition: opacity .2s ease-in;
+}
+
+.addon[selected]:hover {
+  color: #8d8d8d !important;
+  background: #101010!important;
+  -moz-transition: opacity 120ms ease-in;
+}
+
+.addon-view[active="false"],
+.addon-view[active="false"]:hover {
+  background: url("images/insensitive.png")!important;
+    background-repeat: repeat!important;
+    box-shadow: none!important;
+}
+
+.addon-view[active="false"][selected],
+.addon-view[active="false"][selected]:hover {
+  background: url("images/insensitive.png"), #303030!important;
+    background-repeat: repeat!important;
+}
+
+.addon .name-container{
+  color: #ababab !important;
+}
+
+.addon:hover .name-container{
+  color: #cdcdcd !important;
+}
+
+.addon[selected] .name-container,
+.addon[selected="true"] .name-container{
+  color: #f2f2f2 !important;
+}
+
+.addon[selected="true"]:hover .name-container{
+  color: #ffffff !important;
+}
+
+.creator {
+  font-weight: lighter !important;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.42) !important;
+}
+
+.addon[selected] .text-link,
+.addon[selected] .button-link,
+.creator .text-link {
+  color: #006CB7 !important;
+}
+
+.addon-view[active="false"],
+.addon-view[active="false"]:hover {
+  color: #3d3d36 !important;
+}
+
+.addon-view[active="false"] .name-container,
+.addon-view[active="false"] .name-container:hover {
+  color: #5d5d58 !important;
+}
+
+.addon-view[active="false"][selected],
+.addon-view[active="false"][selected]:hover {
+  color: #5d5d58 !important;
+}
+
+.addon-view[active="false"][selected] .name-container {
+  color: #656565 !important;
+}
+
+.addon-view[active="false"][selected]:hover .name-container {
+  color: #676767 !important;
+}
+
+.warning,
+.pending,
+.error {
+  -moz-margin-start: 48px !important;
+  font-weight: bold !important;
+  -moz-box-align: center !important;
+}
+
+.addon-view .warning {
+  color: #F47D43 !important;
+}
+
+.addon-view .error {
+  color: #940109 !important;
+}
+
+.addon-view .pending {
+  color:#F4E0C8 !important;
+}
+
+.addon-view[pending="disable"] .pending,
+.addon-view[pending="uninstall"] .pending {
+  color: #7DB6D3 !important;
+}
+
+.header-button {
+  -moz-appearance: none !important;
+  margin: 0px 5px !important;
+  min-width: 6.3em !important;   
+  padding: 4px 0 !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-top-color: #5f5f5f !important; 
+  border-left-color:  #5f5f5f !important; 
+  border-right-color:  #3d3d3d !important; 
+  border-bottom-color:  #3d3d3d !important;
+  background: -moz-linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.3)), -moz-linear-gradient(rgba(255,255,255,0.45), rgba(255,255,255,0.45)), #2c2c2c !important;
+  border-radius: 2px !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.18) inset,
+				0 2px rgba(255,255,255, 0.06) inset,
+				0 3px rgba(255,255,255, 0.03) inset,
+				1px 0 rgba(255,255,255, 0.06) inset,
+				0 1px 2px rgba(0,0,0,0.16) !important;
+	color: #cdcdcd !important;
+	text-shadow: 0 1px rgba(0,0,0, 0.18) !important;
+}
+
+#header-utils-btn {
+	border-color: rgba(0,0,0, 0.0) !important;
+	background: rgba(0,0,0, 0.0) !important;
+	box-shadow: none !important;
+}
+
+.header-button[disabled="true"] {
+  background: -moz-linear-gradient(rgba(255,255,255,0.20),rgba(0,0,0,0.20)),-moz-linear-gradient(rgba(255,255,255,0.35),rgba(255,255,255,0.35)), #2c2c2c !important;
+	border-color: #474747 #424242 #3f3f3f !important;            
+  box-shadow:  	0px 1px 0px rgba(0,0,0,0.2) inset,
+				0px 2px 3px rgba(0, 0, 0, 0.08) inset,
+				1px 0px 0 rgba(0,0,0,0.1) inset,
+				2px 0px 0 rgba(0,0,0,0.04) inset,
+				-1px 0px 0 rgba(0,0,0,0.1) inset,
+				-2px 0px 0 rgba(0,0,0,0.02) inset,
+				0px 1px 0px rgba(255, 255, 255, 0.06)!important;
+	color: #A5A7A8 !important;
+  }
+  
+.header-button:not([open="true"]):not([disabled="true"]):not(:active):hover {
+  background: -moz-linear-gradient(rgba(255,255,255,0.3), rgba(0,0,0,0.3)), -moz-linear-gradient(rgba(255,255,255,0.35), rgba(255,255,255,0.35)), rgba(0,0,0,0.44) !important;
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-top-color: #474747 !important; 
+  border-left-color:  #4a4a4a !important; 
+  border-right-color:  #4a4a4a !important; 
+  border-bottom-color:  #424242 !important;
+  box-shadow: 0 1px rgba(0,0,0,0.18) inset,
+				0 2px rgba(255,255,255, 0.06) inset,
+				0 3px rgba(255,255,255, 0.03) inset,
+				0 4px rgba(255,255,255, 0.03) inset,
+				0 1px rgba(255,255,255,0.06) !important;
+  transition: background-color .1s ease-in!important;
+  color: #cdcdcd!important;
+} 
+
+.header-button:not([open="true"]):not([disabled="true"]):hover:active,
+.header-button:not([open="true"]):not([disabled="true"]):active,
+.header-button[checked="true"]:not([disabled="true"]),
+.header-button[open="true"]:not([disabled="true"]) {
+  background: -moz-linear-gradient(rgba(0,0,0,0.04), rgba(255,255,255,0.0) 59%, rgba(0,0,0,0.0) 60%, rgba(255,255,255,0.025)),-moz-linear-gradient(rgba(1,98,149,0.45),rgba(1,98,149,0.45)), rgba(0,0,0,0.6) !important;
+  border-color: #353535 #383838 !important;            
+  box-shadow:  	0px 1px 0 rgba(0,0,0,0.2) inset,
+				0px 2px 0 rgba(0, 0, 0, 0.08) inset,
+				1px 0px 0 rgba(0,0,0,0.1) inset,
+				2px 0px 0 rgba(0,0,0,0.04) inset,
+				-1px 0px 0 rgba(0,0,0,0.1) inset,
+				-2px 0px 0 rgba(0,0,0,0.02) inset,
+				0px 1px 0px rgba(255, 255, 255, 0.09)!important;
+  text-shadow: none!important;
+  color: #e2e2e2 !important;
+}
+
+#header-utils-btn:not([open="true"]):hover:active,
+#header-utils-btn:not([open="true"]):active,
+#header-utils-btn[open="true"] {
+	border-radius: 3px 3px 0 0 !important;
+	
+	border-color: 1px solid rgb(26,26,26) !important;
+	background: #1e1e1e !important;
+	box-shadow:  1px  0px rgba(255,255,255, 0.025) inset,
+				 0px  1px rgba(255,255,255, 0.03) inset,
+				-1px  0px rgba(0,0,0, 0.06) inset !important;
+}
+
+.addon-control {
+  -moz-appearance: none !important;
+  margin: 0px 3px !important;
+  min-height: 24px !important;
+  padding: 0 !important;
+  border-radius: 2px!important;    
+ 	border-style: solid !important;
+ 	border-width: 1px !important;
+  border: #101010 !important;
+  background-image: -moz-linear-gradient(#2e2e2e, #272727) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.03) inset,
+				0 2px rgba(255,255,255, 0.01) inset,
+				1px 0 rgba(255,255,255, 0.015) inset,
+				-1px 0 rgba(255,255,255, 0.015) inset,
+				0 -1px rgba(255,255,255, 0.002) inset,
+				0 1px rgba(0,0,0,0.18) !important;
+	color: #acacac !important;
+}
+
+.addon[selected] .addon-control,
+.addon[selected]:hover .addon-control {
+  -moz-appearance: none !important;
+  border-style: solid !important;
+ 	border-width: 1px !important;
+  border: #1c1c1c !important;
+  background-image: -moz-linear-gradient(#242424, #1f1f1f) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.03) inset,
+				0 2px rgba(255,255,255, 0.01) inset,
+				1px 0 rgba(255,255,255, 0.015) inset,
+				-1px 0 rgba(255,255,255, 0.015) inset,
+				0 -1px rgba(255,255,255, 0.002) inset,
+				0 1px rgba(0,0,0,0.18) !important;
+	color: #cbcbcb !important;
+}
+
+.addon:hover .addon-control {
+  -moz-appearance: none !important;
+  border-style: solid !important;
+ 	border-width: 1px !important;
+  border: #1f1f1f !important;
+  background-image: -moz-linear-gradient(#282828, #222222) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.03) inset,
+				0 2px rgba(255,255,255, 0.01) inset,
+				1px 0 rgba(255,255,255, 0.015) inset,
+				-1px 0 rgba(255,255,255, 0.015) inset,
+				0 -1px rgba(255,255,255, 0.002) inset,
+				0 1px rgba(0,0,0,0.18) !important;
+	color: #acacac !important;
+}
+
+.addon-control:not(:active):hover { 
+  -moz-appearance: none !important;
+  border-style: solid !important;
+ 	border-width: 1px !important;
+  border: #1f1f1f !important;
+  background-image: -moz-linear-gradient(#282828, #222222) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.03) inset,
+				0 2px rgba(255,255,255, 0.01) inset,
+				1px 0 rgba(255,255,255, 0.015) inset,
+				-1px 0 rgba(255,255,255, 0.015) inset,
+				0 -1px rgba(255,255,255, 0.002) inset,
+				0 1px rgba(0,0,0,0.18) !important;
+	color: #acacac !important;
+}
+
+.addon[selected] .addon-control:not(:active):hover { 
+  -moz-appearance: none !important;
+  border-style: solid !important;
+ 	border-width: 1px !important;
+  border: #1c1c1c !important;
+  background-image: -moz-linear-gradient(#242424, #1f1f1f) !important;
+  box-shadow: 0 1px rgba(255,255,255, 0.03) inset,
+				0 2px rgba(255,255,255, 0.01) inset,
+				1px 0 rgba(255,255,255, 0.015) inset,
+				-1px 0 rgba(255,255,255, 0.015) inset,
+				0 -1px rgba(255,255,255, 0.002) inset,
+				0 1px rgba(0,0,0,0.18) !important;
+	color: #cbcbcb !important;			
+}
+
+.addon-control:not(:active):focus,
+.addon-control:not(:active):focus:hover,
+.addon[selected] .addon-control:not(:active):focus,
+.addon[selected]:hover .addon-control:not(:active):focus,
+.addon[selected]:hover .addon-control:not(:active):focus:hover,
+.addon-control:focus,
+.addon-control:focus:hover,
+.addon[selected] .addon-control:focus,
+.addon[selected]:hover .addon-control:focus,
+.addon[selected]:hover .addon-control:focus:hover {
+  border: 1px dotted #4d4d4d !important; 
+    color: #f2f2f2 !important;
+    border-radius: 2px !important;
+  text-shadow: 0 1px 2px rgba(0,0,0, 0.26)!important;
+  transition: color .2s ease-in !important;
+}
+/**********************Message Body and Text **************************/
+/** This makes basic HTML mails which are just text appear in white on black, but more complex mails tend to use tables or other layout features with their own custom colours which are preserved. **/
+body {color: #dbdbdb; background-color: #232323}
+:link {color: #1170A8!important;}
+
+td {color: black; background-color: white}
+:link {color: #0000c8}
+
+@-moz-document url-prefix(mailbox:) {
+  /* all the other rules go here */
+  }
+
+
+/************* Thunderbird Start Page Linux English *******************/
+/**for other languages(and new releases) you must locate the URL for the thunderbird start page and enter it in both locations below **/
+/*@-moz-document url(https://www.mozilla.org/en-US/thunderbird/release/start/?uri=/thunderbird/start&locale=en-US&version=15.0.1&os=Linux&buildid=20120910110134) {
+body {
+ border-top: 2px solid !important;
+ -moz-border-top-colors: rgba(0,0,0,.65) rgba(255,255,255,0.16) !important;
+}}
+
+@-moz-document url(https://www.mozilla.org/en-US/thunderbird/release/start/?uri=/thunderbird/start&locale=en-US&version=15.0.1&os=Linux&buildid=20120910110134) {
+* {
+  color: #dbdbdb !important;
+  text-shadow: 0px -1px 0px rgba(0,0,0,.4);
+  -moz-appearance: none!important;
+  background: url("images/WindowBg-dark.png") repeat!important;
+
+}}*/
+
+
+
+
